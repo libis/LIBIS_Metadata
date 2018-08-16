@@ -23,10 +23,17 @@ Gem::Specification.new do |spec|
 
   spec.add_runtime_dependency 'libis-tools', '~> 0.9'
   spec.add_runtime_dependency 'libis-services', '~> 0.2.1'
+  spec.add_runtime_dependency 'simple_xlsx_reader', '~> 1.0'
+  spec.add_runtime_dependency 'parslet', '~> 1.7'
   spec.add_runtime_dependency 'tty-prompt'
   spec.add_runtime_dependency 'thor'
 
-  spec.add_development_dependency "bundler", "~> 1.16"
-  spec.add_development_dependency "rake", "~> 10.0"
-  spec.add_development_dependency "rspec", "~> 3.0"
+  spec.add_development_dependency 'bundler', '~> 1.16'
+  spec.add_development_dependency 'rake', '~> 10.0'
+  spec.add_development_dependency 'rspec', '~> 3.0'
+  spec.add_development_dependency 'simplecov', '~> 0.9'
+  spec.add_development_dependency 'coveralls', '~> 0.7'
+  spec.add_development_dependency 'equivalent-xml', '~> 0.5'
+  spec.add_development_dependency 'awesome_print', '~> 1.6'
+
 end
