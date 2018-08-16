@@ -1,6 +1,6 @@
 require 'uri'
-require 'tty-prompt'
 require 'pathname'
+require 'awesome_print'
 
 require 'libis/services/alma/sru_service'
 require 'libis/services/scope/search'
@@ -17,19 +17,18 @@ module Libis
   module Metadata
 
     class Downloader
-      attr_reader :prompt, :service, :mapper_class, :config
+      attr_reader :service, :mapper_class, :config
 
       def initialize
         @service = nil
         @target_dir = nil
         @config = nil
-        @prompt = TTY::Prompt.new
         @mapper_class = nil
       end
 
       def configure(config)
-        source = config[:source]
-        case source
+        metadata = config[:metadata]
+        case metadata
         when 'alma'
           @service ||= Libis::Services::Alma::SruService.new
           @mapper_class = Libis::Tools::Metadata::Mappers::Kuleuven
@@ -38,14 +37,12 @@ module Libis
           @mapper_class = Libis::Tools::Metadata::Mappers::Scope
           @service.connect(config[:password], config[:password], config[:database])
         else
-          prompt.error "ERROR: unknown service '#{service}'"
-          exit(-1)
+          raise RuntimeError, "Service '#{service}' unknown"
         end
         @target_dir = config[:target_dir]
         @config = config
       rescue Exception => e
-        prompt.error "ERROR: failed to configure metadata service: #{e.message} @ #{e.backtrace.first}"
-        exit(-1)
+        raise RuntimeError "failed to configure metadata service: #{e.message} @ #{e.backtrace.first}"
       end
 
       def download(term, filename, pid = nil)
@@ -55,6 +52,8 @@ module Libis
         record = md_update_xml(pid, record) if pid
 
         record.save File.join(@target_dir, filename)
+
+        filename
       end
 
       # @return [Libis::Tools::Metadata::DublinCoreRecord]
@@ -62,7 +61,7 @@ module Libis
         record = case service
                  when ::Libis::Services::Alma::SruService
                    result = service.search(config[:field], URI::encode("\"#{term}\""), config[:library])
-                   prompt.warn "WARNING: Multiple records found for #{config[:field]}=#{term}" if result.size > 1
+                   raise RuntimeError "Multiple records found for #{config[:field]}=#{term}" if result.size > 1
                    result.empty? ? nil : ::Libis::Tools::Metadata::Marc21Record.new(result.first.root)
 
                  when ::Libis::Services::Scope::Search
@@ -72,21 +71,19 @@ module Libis
                    end
 
                  else
-                   prompt.error "ERROR: Unkknown service: #{service}"
+                   raise RuntimeError "Service '#{service}' unknown"
 
                  end
 
         unless record
-          prompt.warn "WARNING: No record found for #{config[:field]} = '#{term}'"
-          return nil
+          raise RuntimeError, "No record found for #{config[:field]} = '#{term}'"
         end
 
         record.extend mapper_class
         record.to_dc
 
       rescue Exception => e
-        prompt.error "ERROR: Search request failed: #{e.message}"
-        return nil
+        raise RuntimeError, "Search request failed: #{e.message}"
       end
 
       def save(record, filename)
