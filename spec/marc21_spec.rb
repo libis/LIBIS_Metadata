@@ -8,7 +8,7 @@ require 'libis/tools/extend/string'
 
 RSpec.describe 'Marc21Record' do
 
-  subject(:record) { Libis::Tools::Metadata::Marc21Record.new(data) {} }
+  subject(:record) { Libis::Metadata::Marc21Record.new(data) {} }
   let(:data) { xml.root }
 
   context '8389207' do
@@ -106,7 +106,7 @@ RSpec.describe 'Marc21Record' do
     end
 
     it 'convert to dublin core' do
-      record.extend Libis::Tools::Metadata::Mappers::Kuleuven
+      record.extend Libis::Metadata::Mappers::Kuleuven
       xml_doc = Libis::Tools::XmlDocument.parse <<STR
 <?xml version="1.0" encoding="utf-8"?>
 <dc:record xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:dcterms="http://purl.org/dc/terms/">
@@ -154,7 +154,7 @@ STR
     end
 
     it 'convert to dublin core' do
-      record.extend Libis::Tools::Metadata::Mappers::Kuleuven
+      record.extend Libis::Metadata::Mappers::Kuleuven
       xml_doc = Libis::Tools::XmlDocument.parse <<STR
 <?xml version="1.0" encoding="utf-8"?>
 <dc:record xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:dcterms="http://purl.org/dc/terms/">

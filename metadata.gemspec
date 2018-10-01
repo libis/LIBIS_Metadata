@@ -21,7 +21,7 @@ Gem::Specification.new do |spec|
   spec.test_files    = spec.files.grep(%r{^(test|spec|features)/})
   spec.require_paths = ["lib"]
 
-  spec.add_runtime_dependency 'libis-tools', '~> 0.9'
+  spec.add_runtime_dependency 'libis-tools', '~> 1.0'
   spec.add_runtime_dependency 'libis-services', '~> 0.2.1'
   spec.add_runtime_dependency 'simple_xlsx_reader', '~> 1.0'
   spec.add_runtime_dependency 'parslet', '~> 1.7'

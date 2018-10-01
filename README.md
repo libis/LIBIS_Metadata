@@ -1,15 +1,18 @@
-# Metadata
+[![Gem Version](https://badge.fury.io/rb/libis-metadata.svg)](http://badge.fury.io/rb/libis-metadata)
+[![Build Status](https://travis-ci.org/Kris-LIBIS/LIBIS_Metadata.svg?branch=master)](https://travis-ci.org/Kris-LIBIS/LIBIS_Metadata)
+[![Coverage Status](https://img.shields.io/coveralls/Kris-LIBIS/LIBIS_Metadata.svg)](https://coveralls.io/r/Kris-LIBIS/LIBIS_Metadata)
+[![Dependency Status](https://gemnasium.com/Kris-LIBIS/LIBIS_Metadata.svg)](https://gemnasium.com/Kris-LIBIS/LIBIS_Metadata)
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/metadata`. To experiment with that code, run `bin/console` for an interactive prompt.
+# Libis::Metadata
 
-TODO: Delete this and the text above, and describe your gem
+This gem contains classes and tools related to metadata. It depends on the libis-tools and libis-services gems.
 
 ## Installation
 
 Add this line to your application's Gemfile:
 
 ```ruby
-gem 'libis-metadata'
+    gem 'libis-metadata'
 ```
 
 And then execute:
@@ -22,18 +25,54 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+In order to make available all the code the gem supplies a single file can be included:
 
-## Development
+```ruby
+    require 'libis-metadata'
+```
 
-After checking out the repo, run `bin/setup` to install dependencies. Then, run `rake spec` to run the tests. You can also run `bin/console` for an interactive prompt that will allow you to experiment.
+or:
 
-To install this gem onto your local machine, run `bundle exec rake install`. To release a new version, update the version number in `version.rb`, and then run `bundle exec rake release`, which will create a git tag for the version, push git commits and tags, and push the `.gem` file to [rubygems.org](https://rubygems.org).
+```ruby
+    require 'libis/metadata'
+```
+
+Alternatively, if you only want to use a single class or module, partial files are available. See the examples in the
+sections below for their names.
+
+## Content
+
+This gem provides some modules and classes that assist in working with metadata. There are classes that allow to
+create and/or read metadata for MARC(21), Dublin Core and SharePoint. These classes all live in the
+Libis::Metadata namespace. Additionally there are parsers and converters in the Libis::Metadata::Parser namespace
+
+### MARC
+
+The classes {::Libis::Metadata::MarcRecord} and it's child class {::Libis::Metadata::Marc21Record} are
+mainly built for reading MARC(21) records. Most of the class logic is in the base class
+{::Libis::Metadata::MarcRecord MarcRecord}, which is incomplete and should be considered an abstract class.
+
+{::Libis::Metadata::Marc21Record Marc21Record} on the other hand only contains the logic to parse the XML data
+into the internal structure. A {::Libis::Metadata::MarcRecord MarcRecord} is created by supplying it an XML node
+(from Nokogiri or {::Libis::Tools::XmlDocument}) that contains child nodes with the MARC data of a single record.
+
+The code will strip namespaces from the input in order to greatly simplify working with the XML.
+
+### Dublin Core
+
+The {Libis::Metadata::DublinCoreRecord} class is an extension of the {Libis::Tools::XmlDocument} class with specific
+enhancements to support both dc: and dc_terms: namespaces. Creating a new object from scratch will automatically include
+the proper xmlns references and a dc:record root element. When adding nodes without namespace prefix, the class will
+add the proper namespace for you, prefering dc: over dc_terms in case of ambiguity.
+
+### Mappers
+
+
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/[USERNAME]/metadata.
-
-## License
-
-The gem is available as open source under the terms of the [MIT License](https://opensource.org/licenses/MIT).
+1. Fork it ( https://github.com/Kris-LIBIS/LIBIS_Metadata/fork )
+2. Create your feature branch (`git checkout -b my-new-feature`)
+3. Commit your changes (`git commit -am 'Add some feature'`)
+4. Push to the branch (`git push origin my-new-feature`)
+5. Create a new Pull Request

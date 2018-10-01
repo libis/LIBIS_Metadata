@@ -122,7 +122,6 @@ module Libis
                   opts.merge!(col_sep: "\t", extension: :csv) if File.extname(file) == '.tsv'
                   Libis::Tools::Spreadsheet.foreach("#{file}#{sheet ? '|' + sheet : ''}", opts) do |row|
                     next if row[:term].nil? || row[:term] == 'Term'
-                    ap row
                     download_one(service: md, term: row[:term], pid: row[:pid], filename: row[:filename])
                   end
                 end

@@ -11,15 +11,15 @@ RSpec.describe 'ScopeMapper' do
 
   it 'Correct Scope output' do
 
-    input_dc = Libis::Tools::Metadata::DublinCoreRecord.new(input)
-    expect(input_dc).to be_a Libis::Tools::Metadata::DublinCoreRecord
+    input_dc = Libis::Metadata::DublinCoreRecord.new(input)
+    expect(input_dc).to be_a Libis::Metadata::DublinCoreRecord
 
-    output_dc = Libis::Tools::Metadata::DublinCoreRecord.new(output)
-    expect(output_dc).to be_a Libis::Tools::Metadata::DublinCoreRecord
+    output_dc = Libis::Metadata::DublinCoreRecord.new(output)
+    expect(output_dc).to be_a Libis::Metadata::DublinCoreRecord
 
-    input_dc.extend Libis::Tools::Metadata::Mappers::Scope
+    input_dc.extend Libis::Metadata::Mappers::Scope
     converted_dc = input_dc.to_dc
-    expect(converted_dc).to be_a Libis::Tools::Metadata::DublinCoreRecord
+    expect(converted_dc).to be_a Libis::Metadata::DublinCoreRecord
 
     converted_dc.root.elements.each_with_index do |element, i|
       expect(element).to be_equivalent_to(output_dc.root.elements[i])

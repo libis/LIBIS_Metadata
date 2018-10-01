@@ -5,13 +5,14 @@ require 'awesome_print'
 require 'libis/services/alma/sru_service'
 require 'libis/services/scope/search'
 
-require 'libis/tools/metadata/marc21_record'
-require 'libis/tools/metadata/dublin_core_record'
 require 'libis/tools/xml_document'
 require 'libis/tools/extend/string'
 
-require 'libis/tools/metadata/mappers/kuleuven'
-require 'libis/tools/metadata/mappers/scope'
+require 'libis/metadata/marc21_record'
+require 'libis/metadata/dublin_core_record'
+
+require 'libis/metadata/mappers/kuleuven'
+require 'libis/metadata/mappers/scope'
 
 module Libis
   module Metadata
@@ -31,10 +32,10 @@ module Libis
         case metadata
         when 'alma'
           @service ||= Libis::Services::Alma::SruService.new
-          @mapper_class = Libis::Tools::Metadata::Mappers::Kuleuven
+          @mapper_class = Libis::Metadata::Mappers::Kuleuven
         when 'scope'
           @service = ::Libis::Services::Scope::Search.new
-          @mapper_class = Libis::Tools::Metadata::Mappers::Scope
+          @mapper_class = Libis::Metadata::Mappers::Scope
           @service.connect(config[:password], config[:password], config[:database])
         else
           raise RuntimeError, "Service '#{service}' unknown"
@@ -56,18 +57,18 @@ module Libis
         filename
       end
 
-      # @return [Libis::Tools::Metadata::DublinCoreRecord]
+      # @return [Libis::Metadata::DublinCoreRecord]
       def search(term)
         record = case service
                  when ::Libis::Services::Alma::SruService
                    result = service.search(config[:field], URI::encode("\"#{term}\""), config[:library])
                    raise RuntimeError "Multiple records found for #{config[:field]}=#{term}" if result.size > 1
-                   result.empty? ? nil : ::Libis::Tools::Metadata::Marc21Record.new(result.first.root)
+                   result.empty? ? nil : ::Libis::Metadata::Marc21Record.new(result.first.root)
 
                  when ::Libis::Services::Scope::Search
                    service.query(term, type: config[:field])
                    service.next_record do |doc|
-                     ::Libis::Tools::Metadata::DublinCoreRecord.new(doc.to_xml)
+                     ::Libis::Metadata::DublinCoreRecord.new(doc.to_xml)
                    end
 
                  else
