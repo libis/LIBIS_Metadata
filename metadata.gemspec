@@ -22,7 +22,7 @@ Gem::Specification.new do |spec|
   spec.require_paths = ["lib"]
 
   spec.add_runtime_dependency 'libis-tools', '~> 1.0'
-  spec.add_runtime_dependency 'libis-services', '~> 0.2.1'
+  spec.add_runtime_dependency 'libis-services', '~> 1.0'
   spec.add_runtime_dependency 'simple_xlsx_reader', '~> 1.0'
   spec.add_runtime_dependency 'parslet', '~> 1.7'
   spec.add_runtime_dependency 'tty-prompt'
