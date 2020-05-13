@@ -1,7 +1,6 @@
 # encoding: utf-8
 
 require 'simple_xlsx_reader'
-require 'backports/rails/string'
 
 require_relative 'parsers'
 
