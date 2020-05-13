@@ -1,6 +1,7 @@
 # encoding: utf-8
 
 require 'simple_xlsx_reader'
+require 'libis/tools/extend/string'
 
 require_relative 'parsers'
 
