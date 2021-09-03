@@ -1,6 +1,6 @@
 # coding: utf-8
 
-require 'uri'
+require 'cgi'
 
 require 'libis/tools/extend/hash'
 require 'libis/tools/xml_document'
@@ -55,9 +55,9 @@ module Libis
 
       def url
 #    self[:ows_EncodedAbsUrl]
-#    'https://www.groupware.kuleuven.be' + URI.escape(self[:ows_ServerUrl], Regexp.new("[^#{URI::PATTERN::UNRESERVED}]"))
-#    'https://www.groupware.kuleuven.be' + URI.escape(self[:ows_ServerUrl])
-        URI.escape(URI.unescape(self[:ows_EncodedAbsUrl]))
+#    'https://www.groupware.kuleuven.be' + CGI.escape(self[:ows_ServerUrl], Regexp.new("[^#{URI::PATTERN::UNRESERVED}]"))
+#    'https://www.groupware.kuleuven.be' + CGI.escape(self[:ows_ServerUrl])
+        CGI.escape(CGI.unescape(self[:ows_EncodedAbsUrl]))
       end
 
       def relative_path

@@ -1,4 +1,4 @@
-require 'uri'
+require 'cgi'
 require 'pathname'
 require 'awesome_print'
 
@@ -61,7 +61,7 @@ module Libis
       def search(term)
         record = case service
                  when ::Libis::Services::Alma::SruService
-                   result = service.search(config[:field], URI::encode("\"#{term}\""), config[:library])
+                   result = service.search(config[:field], CGI.escape("\"#{term}\""), config[:library])
                    raise RuntimeError "Multiple records found for #{config[:field]}=#{term}" if result.size > 1
                    result.empty? ? nil : ::Libis::Metadata::Marc21Record.new(result.first.root)
 
