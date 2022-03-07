@@ -13,6 +13,7 @@ module Libis
     # Mappers implementations for converting MARC records to Dublin Core.
     module Mappers
 
+      autoload :Standard, 'libis/metadata/mappers/standard'
       autoload :Kuleuven, 'libis/metadata/mappers/kuleuven'
       autoload :Flandrica, 'libis/metadata/mappers/flandrica'
       autoload :Scope, 'libis/metadata/mappers/scope'

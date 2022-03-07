@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<dc:record xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:dcterms="http://purl.org/dc/terms/">
+  <dc:identifier xsi:type="dcterms:URI">urn:ControlNumber:9992375408301488</dc:identifier>
+  <dc:title>Acta Sanctorum Hiberniae</dc:title>
+  <dcterms:medium>Paper</dcterms:medium>
+  <dcterms:medium>Parchment</dcterms:medium>
+  <dcterms:medium>Online</dcterms:medium>
+  <dc:rights>public domain / available under a licence [licentievoorwaarden#digi0054]</dc:rights>
+  <dc:type>Manuscripts</dc:type>
+  <dc:type>E-books</dc:type>
+  <dc:source>Royal Library ms.7672-74</dc:source>
+</dc:record>
