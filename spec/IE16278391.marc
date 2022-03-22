@@ -1,2 +1,82 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<collection><record><leader>00803nam a2200253 u 4500</leader><controlfield tag="001">9992190506501488</controlfield><controlfield tag="005">20211229033636.0</controlfield><controlfield tag="008">160129nuuuuuuuube      r     000 0 dut d</controlfield><datafield tag="035" ind1=" " ind2=" "><subfield code="a">(BeLVLBS)9992350464601471</subfield></datafield><datafield tag="035" ind1=" " ind2=" "><subfield code="a">(EXLNZ-32KUL_LIBIS_NETWORK)9992350464601471</subfield></datafield><datafield tag="040" ind1=" " ind2=" "><subfield code="a">BeLVLBS</subfield><subfield code="b">Language of cataloging varies</subfield><subfield code="e">rda based</subfield></datafield><datafield tag="245" ind1="0" ind2="0"><subfield code="a">Algemeen programma van vakteekenen</subfield></datafield><datafield tag="264" ind1=" " ind2="1"><subfield code="a">Antwerpen</subfield><subfield code="b">Stockmans</subfield><subfield code="c">[datum van uitgave onbekend]</subfield></datafield><datafield tag="300" ind1=" " ind2=" "><subfield code="a">28 p.</subfield></datafield><datafield tag="336" ind1=" " ind2=" "><subfield code="a">text</subfield><subfield code="2">rdacontent</subfield></datafield><datafield tag="337" ind1=" " ind2=" "><subfield code="a">unmediated</subfield><subfield code="2">rdamedia</subfield></datafield><datafield tag="338" ind1=" " ind2=" "><subfield code="a">volume</subfield><subfield code="2">rdacarrier</subfield></datafield><datafield tag="653" ind1=" " ind2="6"><subfield code="a">Schoolbooks - Didactic material</subfield></datafield><datafield tag="650" ind1=" " ind2="7"><subfield code="2">KUL</subfield><subfield code="a">#BSCH: leerplan</subfield></datafield><datafield tag="650" ind1=" " ind2="7"><subfield code="2">KUL</subfield><subfield code="a">#BSCH: vak: plastische opvoeding</subfield></datafield><datafield tag="650" ind1=" " ind2="7"><subfield code="2">KUL</subfield><subfield code="a">#BSCH: vak: tekenen</subfield></datafield><datafield tag="699" ind1=" " ind2=" "><subfield code="a">HCPPW collectie leerplannen</subfield><subfield code="9">local</subfield></datafield><datafield tag="700" ind1="1" ind2=" "><subfield code="a">Dekesel, Ach.</subfield><subfield code="e">author</subfield></datafield><datafield tag="700" ind1="1" ind2=" "><subfield code="a">Van Ermen, Ger.</subfield><subfield code="e">author</subfield></datafield><datafield tag="852" ind1="8" ind2=" "><subfield code="8">22368407240001488</subfield><subfield code="b">PBIB</subfield><subfield code="c">HCPPW</subfield><subfield code="h">LPL 0000653</subfield></datafield><datafield tag="900" ind1=" " ind2=" "><subfield code="a">HCPPW CHECKED</subfield></datafield><datafield tag="902" ind1=" " ind2=" "><subfield code="m">PHYSICAL</subfield></datafield></record></collection>
+<collection>
+  <record>
+    <leader>00803nam a2200253 u 4500</leader>
+    <controlfield tag="001">9992190506501488</controlfield>
+    <controlfield tag="005">20211229033636.0</controlfield>
+    <controlfield tag="008">160129nuuuuuuuube      r     000 0 dut d</controlfield>
+    <datafield tag="035" ind1=" " ind2=" ">
+      <subfield code="a">(BeLVLBS)9992350464601471</subfield>
+    </datafield>
+    <datafield tag="035" ind1=" " ind2=" ">
+      <subfield code="a">(EXLNZ-32KUL_LIBIS_NETWORK)9992350464601471</subfield>
+    </datafield>
+    <datafield tag="040" ind1=" " ind2=" ">
+      <subfield code="a">BeLVLBS</subfield>
+      <subfield code="b">Language of cataloging varies</subfield>
+      <subfield code="e">rda based</subfield>
+    </datafield>
+    <datafield tag="245" ind1="0" ind2="0">
+      <subfield code="a">Algemeen programma van vakteekenen</subfield>
+    </datafield>
+    <datafield tag="264" ind1=" " ind2="1">
+      <subfield code="a">Antwerpen</subfield>
+      <subfield code="b">Stockmans</subfield>
+      <subfield code="c">[datum van uitgave onbekend]</subfield>
+    </datafield>
+    <datafield tag="300" ind1=" " ind2=" ">
+      <subfield code="a">28 p.</subfield>
+    </datafield>
+    <datafield tag="336" ind1=" " ind2=" ">
+      <subfield code="a">text</subfield>
+      <subfield code="2">rdacontent</subfield>
+    </datafield>
+    <datafield tag="337" ind1=" " ind2=" ">
+      <subfield code="a">unmediated</subfield>
+      <subfield code="2">rdamedia</subfield>
+    </datafield>
+    <datafield tag="338" ind1=" " ind2=" ">
+      <subfield code="a">volume</subfield>
+      <subfield code="2">rdacarrier</subfield>
+    </datafield>
+    <datafield tag="653" ind1=" " ind2="6">
+      <subfield code="a">Schoolbooks - Didactic material</subfield>
+    </datafield>
+    <datafield tag="650" ind1=" " ind2="7">
+      <subfield code="2">KUL</subfield>
+      <subfield code="a">#BSCH: leerplan</subfield>
+    </datafield>
+    <datafield tag="650" ind1=" " ind2="7">
+      <subfield code="2">KUL</subfield>
+      <subfield code="a">#BSCH: vak: plastische opvoeding</subfield>
+    </datafield>
+    <datafield tag="650" ind1=" " ind2="7">
+      <subfield code="2">KUL</subfield>
+      <subfield code="a">#BSCH: vak: tekenen</subfield>
+    </datafield>
+    <datafield tag="699" ind1=" " ind2=" ">
+      <subfield code="a">HCPPW collectie leerplannen</subfield>
+      <subfield code="9">local</subfield>
+    </datafield>
+    <datafield tag="700" ind1="1" ind2=" ">
+      <subfield code="a">Dekesel, Ach.</subfield>
+      <subfield code="e">author</subfield>
+    </datafield>
+    <datafield tag="700" ind1="1" ind2=" ">
+      <subfield code="a">Van Ermen, Ger.</subfield>
+      <subfield code="e">author</subfield>
+    </datafield>
+    <datafield tag="852" ind1="8" ind2=" ">
+      <subfield code="8">22368407240001488</subfield>
+      <subfield code="b">PBIB</subfield>
+      <subfield code="c">HCPPW</subfield>
+      <subfield code="h">LPL 0000653</subfield>
+    </datafield>
+    <datafield tag="900" ind1=" " ind2=" ">
+      <subfield code="a">HCPPW CHECKED</subfield>
+    </datafield>
+    <datafield tag="902" ind1=" " ind2=" ">
+      <subfield code="m">PHYSICAL</subfield>
+    </datafield>
+  </record>
+</collection>

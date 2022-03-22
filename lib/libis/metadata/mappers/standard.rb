@@ -25,6 +25,7 @@ module Libis
             marc2dc_medium(xml)
             marc2dc_rights(xml)
             marc2dc_type(xml)
+            marc2dc_source(xml)
           end
 
           # deduplicate the XML
@@ -61,6 +62,11 @@ module Libis
         def marc2dc_type(xml)
           # DC:TYPE
           marc2dc_type_653__6_a(xml)
+        end
+
+        def marc2dc_source(xml)
+          # DC: SOURCE
+          marc2dc_source_8528_(xml)
         end
 
         private
@@ -100,6 +106,13 @@ module Libis
         def marc2dc_type_653__6_a(xml)
           # [MARC 653 #6 $a]
           each_field('653#6', 'a') { |f| xml['dc'].type f }
+        end
+
+        def marc2dc_source_8528_(xml)
+          # [MARC 852 8_ $b $c, $h]
+          # first_tag('852', 'bch') { |t|
+            # xml['dc'].source list_c(element(t._bc, join(' '), t._h)
+          # }
         end
 
       end

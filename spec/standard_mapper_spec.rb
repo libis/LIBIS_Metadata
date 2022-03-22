@@ -31,6 +31,10 @@ RSpec.describe 'StandardMapper' do
         expect(element).to be_equivalent_to(output.root.elements[i])
       end
 
+      output.root.elements.each_with_index do |element, i|
+        expect(element).to be_equivalent_to(converted.root.elements[i])
+      end
+
     end
 
   end

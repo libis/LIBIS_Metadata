@@ -3,5 +3,5 @@
   <dc:identifier xsi:type="dcterms:URI">urn:ControlNumber:9992190506501488</dc:identifier>
   <dc:title>Algemeen programma van vakteekenen</dc:title>
   <dc:type>Schoolbooks - Didactic material</dc:type>
-  <dc:source>PBIB HCPPW, LPL 0000653</dc:source>
+  <!-- <dc:source>PBIB HCPPW, LPL 0000653</dc:source> -->
 </dc:record>
