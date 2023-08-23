@@ -24,6 +24,8 @@ module Libis
           # remove identifiers with URL
           doc.xpath('//dc:identifier[@xsi:type = "dcterms:URI"]').remove
 
+          doc.title = ''
+
           doc
         end
 

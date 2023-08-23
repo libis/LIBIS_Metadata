@@ -17,6 +17,7 @@ module Libis
       autoload :Kuleuven, 'libis/metadata/mappers/kuleuven'
       autoload :Flandrica, 'libis/metadata/mappers/flandrica'
       autoload :Scope, 'libis/metadata/mappers/scope'
+      autoload :ScopeVlp, 'libis/metadata/mappers/scope_vlp'
 
     end
 
