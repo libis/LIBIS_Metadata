@@ -12,7 +12,7 @@ Gem::Specification.new do |spec|
 
   spec.summary       = %q{All about metadata.}
   spec.description   = %q{A gem with every generic ruby tool and class related to metadata.}
-  spec.homepage      = "https://github.com/Kris-Libis/LIBIS_Metadata"
+  spec.homepage      = "https://github.com/libis/LIBIS_Metadata"
   spec.license       = "MIT"
 
   spec.files         = `git ls-files -z`.split("\x0").reject {|f| f.match(%r{^(test|spec|features)/})}
