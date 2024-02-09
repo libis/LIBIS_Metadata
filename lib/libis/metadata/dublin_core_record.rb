@@ -77,7 +77,7 @@ module Libis
       def add_node(name, value = nil, parent = nil, attributes = {})
         ns, tag = get_namespace(name.to_s)
         (attributes[:namespaces] ||= {})[:node_ns] ||= ns if ns
-        super tag, value, parent, attributes
+        super tag, value, parent, **attributes
       end
 
       protected
