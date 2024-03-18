@@ -61,7 +61,8 @@ module Libis
 
         def marc2dc_type(xml)
           # DC:TYPE
-          marc2dc_type_653__6_a(xml)
+          marc2dc_type_902(xml)
+          marc2dc_type_655(xml)
         end
 
         def marc2dc_source(xml)
@@ -103,9 +104,14 @@ module Libis
           }
         end
 
-        def marc2dc_type_653__6_a(xml)
-          # [MARC 653 #6 $a]
-          each_field('653#6', 'a') { |f| xml['dc'].type f }
+        def marc2dc_type_902(xml)
+          # [MARC 902 ## $r]
+          each_field('902##', 'r') { |f| xml['dc'].type f }
+        end
+
+        def marc2dc_type_655(xml)
+          # [MARC 655 #4 $v]
+          each_field('655#4', 'v') { |f| xml['dc'].type f }
         end
 
         def marc2dc_source_8528_(xml)
