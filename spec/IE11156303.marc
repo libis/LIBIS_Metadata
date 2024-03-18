@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <collection>
   <record>
-    <leader>01361ntm a2200361 u 4500</leader>
+    <leader>01322ntm a2200337 u 4500</leader>
     <controlfield tag="001">9992375408301488</controlfield>
-    <controlfield tag="005">20211225100329.0</controlfield>
+    <controlfield tag="005">20220901170946.0</controlfield>
     <controlfield tag="008">181023m13011400xx      o     000 0 lat c</controlfield>
     <datafield tag="035" ind1=" " ind2=" ">
       <subfield code="a">(BeLVLBS)9992686864501471</subfield>
@@ -74,16 +74,11 @@
       <subfield code="n">available under a licence</subfield>
       <subfield code="u">licentievoorwaarden#digi0054</subfield>
     </datafield>
-    <datafield tag="653" ind1=" " ind2="6">
-      <subfield code="a">Manuscripts</subfield>
-    </datafield>
-    <datafield tag="653" ind1=" " ind2="6">
-      <subfield code="a">E-books</subfield>
-    </datafield>
     <datafield tag="900" ind1=" " ind2=" ">
       <subfield code="a">NO DEDUP</subfield>
     </datafield>
     <datafield tag="902" ind1=" " ind2=" ">
+      <subfield code="r">MANUSCRIPT</subfield>
       <subfield code="m">ELECTRONIC_DIGITAL</subfield>
     </datafield>
     <datafield tag="953" ind1=" " ind2=" ">

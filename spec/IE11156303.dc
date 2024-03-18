@@ -6,7 +6,5 @@
   <dcterms:medium>Parchment</dcterms:medium>
   <dcterms:medium>Online</dcterms:medium>
   <dc:rights>public domain / available under a licence [licentievoorwaarden#digi0054]</dc:rights>
-  <dc:type>Manuscripts</dc:type>
-  <dc:type>E-books</dc:type>
-  <!-- <dc:source>Royal Library ms.7672-74</dc:source> -->
+  <dc:type>MANUSCRIPT</dc:type>
 </dc:record>
