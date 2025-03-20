@@ -63,7 +63,7 @@ module Libis
       def xpath(path)
         m = /^([\/.]*\/)?(dc(terms)?:)?(.*)/.match(path.to_s)
         return [] unless m[4]
-        path = (m[1] || '') + ('dc:' || m[2]) + m[4]
+        path = (m[1] || '') + (m[2] || 'dc:') + m[4]
         @document.xpath(path.to_s)
       end
 
